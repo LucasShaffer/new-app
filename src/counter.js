@@ -7,17 +7,12 @@ import {View, Text, Button, Header} from 'react-native';
 class Counter extends Component{
   constructor(){
     super();
-    this.state={
-      isReady: false
-    }
   }
   render = () => {
-    const {counter} = this.props.counterStore;
-    console.log(counter.value);
     return(
       <View style={{paddingTop: 60}}>
         <Text>
-          {counter.value}
+          {this.props.counterStore.counter}
         </Text>
         <Button title='Increment' onPress= {() => this.props.counterStore.increment()}>
           <Text>Increment</Text>

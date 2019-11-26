@@ -1,11 +1,11 @@
 import {observable, action} from 'mobx';
 class CounterStore {
-  counter = observable.box(0);
-  @action.bound increment() {
+  @observable counter = 0;
+  @action increment() {
     this.counter++;
     console.log("increment", this.counter);
   }
-  @action.bound decrement() {
+  @action decrement() {
     this.counter--;
     console.log("decrement", this.counter);
   }
